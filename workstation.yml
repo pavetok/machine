@@ -1,9 +1,8 @@
 - hosts: all
+  become: yes
   roles:
     - role: cmprescott.chrome
-      become: yes
     - role: gantsign.atom
-      become: yes
       tags: atom
       users:
         - username: "{{ ansible_user_id }}"
@@ -18,3 +17,5 @@
             - minimap-highlight-selected
             - script
             - tool-bar
+    - role: tersmitten.virtualbox
+      tags: virtualbox
