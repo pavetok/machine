@@ -1,0 +1,20 @@
+- hosts: all
+  roles:
+    - role: cmprescott.chrome
+      become: yes
+    - role: gantsign.atom
+      become: yes
+      tags: atom
+      users:
+        - username: "{{ ansible_user_id }}"
+          atom_packages:
+            - atom-beautify
+            - build
+            - file-icons
+            - git-plus
+            - highlight-selected
+            - linter
+            - minimap
+            - minimap-highlight-selected
+            - script
+            - tool-bar
