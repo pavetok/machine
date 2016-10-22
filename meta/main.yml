@@ -1,0 +1,29 @@
+---
+galaxy_info:
+  author: pavetok
+  description: Workstation
+  license: MIT
+  min_ansible_version: 2.1
+  platforms:
+    - name: Ubuntu
+      versions:
+        - xenial
+  galaxy_tags:
+    - development
+    - system
+
+dependencies:
+  - role: cmprescott.chrome
+    when: "{{ 'chrome' in apps }}"
+    tags: chrome
+
+  - role: gantsign.atom
+    when: "{{ 'atom' in apps }}"
+    users:
+      - username: "{{ ansible_user_id }}"
+        atom_packages: "{{ apps.atom.packages }}"
+    tags: atom
+
+  - role: tersmitten.virtualbox
+    when: "{{ 'virtualbox' in apps }}"
+    tags: virtualbox
