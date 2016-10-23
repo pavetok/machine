@@ -10,6 +10,7 @@ addons:
 install:
   - "whoami"
   - "pip install -r requirements.txt"
+  - "ansible-galaxy install -r requirements.yml -p ../"
   - "echo 'roles_path = ../' >> ansible.cfg"
 
 script:
