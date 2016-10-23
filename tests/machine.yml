@@ -1,6 +1,6 @@
 - hosts: localhost
   roles:
-    - role: machine
+    - role: pavetok.machine
       machine_apps:
         virtualbox: yes
         vagrant: yes
