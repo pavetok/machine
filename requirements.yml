@@ -1,0 +1,6 @@
+---
+- src: cmprescott.chrome
+- src: gantsign.atom
+- src: tersmitten.virtualbox
+- src: andrewrothstein.vagrant
+- src: angstwad.docker_ubuntu

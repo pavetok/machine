@@ -1,0 +1,8 @@
+- hosts: localhost
+  roles:
+    - role: pavetok.machine
+      machine_apps:
+        virtualbox: yes
+        vagrant: yes
+        docker:
+          engine: yes

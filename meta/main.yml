@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: pavetok
-  description: Workstation
+  description: Set up local workstation
   license: MIT
   min_ansible_version: 2.1
   platforms:
@@ -14,16 +14,34 @@ galaxy_info:
 
 dependencies:
   - role: cmprescott.chrome
-    when: "{{ 'chrome' in apps }}"
-    tags: chrome
+    when: machine_apps.chrome
+    become: yes  # will be removed
+    tags:
+      - chrome
 
   - role: gantsign.atom
-    when: "{{ 'atom' in apps }}"
+    when: machine_apps.atom
     users:
       - username: "{{ ansible_user_id }}"
-        atom_packages: "{{ apps.atom.packages }}"
-    tags: atom
+        atom_packages: "{{ machine_apps.atom.packages }}"
+    tags:
+      - atom
 
   - role: tersmitten.virtualbox
-    when: "{{ 'virtualbox' in apps }}"
-    tags: virtualbox
+    when: machine_apps.virtualbox
+    tags:
+      - virtualbox
+
+  - role: andrewrothstein.vagrant
+    when: machine_apps.vagrant
+    tags:
+      - vagrant
+
+  - role: angstwad.docker_ubuntu
+    when: machine_apps.docker.engine
+    become: yes  # will be removed
+    docker_group_members:
+      - "{{ ansible_user_id }}"
+    tags:
+      - docker
+      - docker-engine

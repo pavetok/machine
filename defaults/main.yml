@@ -1,0 +1,17 @@
+---
+machine_apps:
+  chrome: yes
+  atom:
+    packages:
+      - atom-beautify
+      - file-icons
+      - git-plus
+      - highlight-selected
+      - linter
+      - minimap
+      - minimap-highlight-selected
+      - tool-bar
+  virtualbox: no
+  vagrant: no
+  docker:
+    engine: no
