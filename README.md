@@ -1,11 +1,12 @@
 pavetok.machine
 ===============
 
+Local machine configuration.
+
 Requirements
 ------------
 
-    sudo ./packages.sh
-    sudo ansible-galaxy install -r requirements.yml
+* ansible 2.1
 
 Role Variables
 --------------
@@ -15,7 +16,7 @@ See [defaults](defaults/main.yml).
 Minimal Configuration
 ---------------------
 
-    # hosts
+    # inventory
     localhost ansible_connection=local
 
     # machine.yml
@@ -26,7 +27,7 @@ Minimal Configuration
 Custom Configuration
 --------------------
 
-    # hosts
+    # inventory
     localhost ansible_connection=local
 
     # machine.yml
@@ -42,12 +43,7 @@ Custom Configuration
 Usage
 -----
 
-    ansible-playbook machine.yml -i hosts --ask-become-pass
-
-Note
-----
-
-* hash_behaviour = merge
+    ansible-playbook machine.yml -i inventory --ask-become-pass
 
 Dependencies
 ------------

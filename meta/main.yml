@@ -1,7 +1,7 @@
 ---
 galaxy_info:
   author: pavetok
-  description: Set up local workstation
+  description: Local machine configuration
   license: MIT
   min_ansible_version: 2.1
   platforms:
