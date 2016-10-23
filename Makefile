@@ -15,6 +15,7 @@ clean:
 
 .PHONY: link
 link:
+	sudo mkdir -p ${ROLES_DIR}
 	sudo ln -sfT ${CURRENT_DIR} ${ROLES_DIR}/${ROLE_NAME}
 
 .PHONY: install
