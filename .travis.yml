@@ -11,6 +11,7 @@ install:
   - "whoami"
   - "pip install -r requirements.txt"
   - "echo 'roles_path = ../' >> ansible.cfg"
+  - "mkdir -p /etc/ansible/roles"
 
 script:
   - make lint
