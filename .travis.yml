@@ -1,6 +1,11 @@
 ---
 language: python
+
 python: "2.7"
+
+branches:
+  only:
+  - master
 
 addons:
   apt:
@@ -8,10 +13,13 @@ addons:
     - python-pip
 
 install:
-  - "pip install ansible-lint"
+  - pip install ansible-lint
 
 script:
   - make lint
 
 notifications:
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  webhooks: https://galaxy.ansible.com/api/v1/notifications
+  email:
+    on_success: change
+    on_failure: change
