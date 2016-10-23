@@ -4,9 +4,7 @@ ROLES_DIR=/etc/ansible/roles
 ROLE_NAME=pavetok.machine
 
 ansible:
-	sudo apt -y install \
-	  libssl-dev \
-	  python-pip
+	sudo apt -y install libssl-dev python-pip
 	sudo pip install -r requirements.txt
   ansible --version
 
@@ -17,9 +15,6 @@ link:
 	sudo ln -sfT ${CURRENT_DIR} ${ROLES_DIR}/${ROLE_NAME}
 
 install: link
-	# https://github.com/ansible/ansible/issues/15413
-	# tar -czf ${ROLE_NAME}.tar.gz *
-	# sudo ansible-galaxy install ${ROLE_NAME}.tar.gz
 	sudo ansible-galaxy install -r requirements.yml
 
 lint:
